@@ -18,5 +18,12 @@ fib_g(N) when N > 1 ->
 
 %% Xвостовая рекурсия
 tail_fib_helper( 0, Result, _Next) -> Result ;  %% last recursion output
-tail_fib_helper( Iter, Result, Next) when Iter > 0 -> tail_fib_helper( Iter -1, Next, Result + Next) .
-tail_fib( N) -> tail_fib_helper( N, 0, 1) .
+tail_fib_helper( Iter, Result, Next) when Iter > 0 -> tail_fib_helper( Iter - 1, Next, Result + Next) .
+tail_fib( N) -> tail_fib_helper( N, 0, 1).
+
+
+
+
+%% Хвостовая рекурсия в Erlang —особый случай рекурсии, при котором рекурсивный вызов является последней операцией, выполняемой функцией.
+%% Функция tail_fib_helper использует дополнительный аргумент-аккумулятор Result, 
+%% который хранит промежуточные результаты вычисления.
